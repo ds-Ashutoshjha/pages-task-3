@@ -181,7 +181,7 @@ type Link = {
 	// label: string;
 	image: any;
 	cricket: any;
-	bCCI: any
+	bCCI: any;
 };
 
 
@@ -191,7 +191,7 @@ const Footer = (props: Link) => {
 
 
 	const { bCCI, cricket, image } = props
-	console.log('bCCI', bCCI)
+	// console.log('bCCI', bCCI)
 
 	return (
 		<>

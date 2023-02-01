@@ -19,7 +19,7 @@ const PageLayout = ({
   console.log('global', global)
   return (
     <>
-      <Header label={_site?.c_cricket} url={""} />
+      <Header label={_site?.c_cricket} url={""} images={""} />
       {children}
       <Footer
         image={global?.c_footerLogo}
