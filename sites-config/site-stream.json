@@ -1,0 +1,25 @@
+{
+  "$id": "site-entity",
+  "filter": {
+    "entityIds": ["global_data"] 
+  },
+  "source": "knowledgeGraph",
+  "fields": [
+    "name",
+    "c_logo",
+    "c_navigationalLinks",
+    "c_cricket",
+    "c_footerLogo",
+    "c_cONTACTUS",
+    "c_mATCHES",
+    "c_international",
+    "c_cricketNews",
+    "c_iPL",
+    "c_bCCI",
+    "facebookPageUrl"
+  ],
+  "localization": {
+    "locales": ["en"],
+    "primary": false
+  }
+}
