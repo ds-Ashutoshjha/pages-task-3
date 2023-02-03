@@ -178,7 +178,7 @@ import * as React from "react";
 // var year = currentTime.getFullYear()
 
 type Link = {
-	// label: string;
+    label: string;
 	image: any;
 	cricket: any;
 	bCCI: any;

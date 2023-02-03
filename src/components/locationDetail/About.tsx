@@ -14,6 +14,7 @@ export default function About(props: any) {
     rtf=rtf.replace('-','');
     return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
 }
+
   return (
     <>
       <div className="about-sec ">
@@ -23,31 +24,12 @@ export default function About(props: any) {
 
           <div className="w-full lg:w-2/5 xl:w-[47%] relative  left-0">
               <div className="lg:h-full">
-              {props.photoGallery ?
-                    props.photoGallery.map((element:any) => (   
-
+              {props.c_photo ?
+                    props.c_photo.map((element:any) => (   
                         <img height={518} width={658} src={element.url} alt="photo" />
-                  
                       ))
                     : ''}
               </div>
-          </div>
-          <div className="about-content">
-            <div className="mb-4">
-              <h2>{props.name}</h2>
-              <div className="">
-              <div class="about-content-inner" dangerouslySetInnerHTML={{__html: convertToRtf(props.description)}}/>
-              </div>
-              {props.c_viewMore.link&&props.c_viewMore.label?
-              <div className="content-center w-full ">
-                <Link href={props.c_viewMore.link} className="button-red"
-                 data-ya-track={`about-button`}
-                 eventName={`about-button`}
-                 rel="noopener noreferrer"
-                >{props.c_viewMore.label}</Link>
-              </div>
-              :''}
-            </div>
           </div>
         </div>
         </div>

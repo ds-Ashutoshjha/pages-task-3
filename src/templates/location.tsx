@@ -11,6 +11,7 @@ import { nearByLocation } from "../types/nearByLocation";
 import Logo from "../images/logo-header.svg"
 import offerBanner from "../images/offer-banner.jpg"
 import IframeMap from "../components/locationDetail/IframeMap";
+// import Services ;
 import "../index.css";
 import {
   Template,
@@ -48,6 +49,8 @@ import FeaturesBrand from "../components/locationDetail/FeaturesBrand";
 import { Fade, Slide } from "react-awesome-reveal";
 import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
+import Header from "../components/layouts/header";
+  import Services from "../components/services";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -64,6 +67,13 @@ export const config: TemplateConfig = {
       "name",
       "address",
       "mainPhone",
+      "c_banner1",
+      "c_faqs.question",
+      "c_faqs.answer",
+      "c_abouts",
+      "c_services1.name",
+      "c_services1.slug",
+      "c_services1.c_price",
       "hours",
       "slug",
       "timezone",
@@ -264,6 +274,11 @@ const Location: Template<ExternalApiRenderData> = ({
     slug,
     hours,
     mainPhone,
+    c_banner1,
+    c_faqs,
+   c_abouts,
+    // c_cta1,
+    c_services1,
     photoGallery,
     c_banner_image,
     c_canonical,
@@ -273,7 +288,7 @@ const Location: Template<ExternalApiRenderData> = ({
     yextDisplayCoordinate,
     displayCoordinate,
     cityCoordinate,
-    name
+    name,
   } = document;
 
  let templateData = { document: document, __meta: __meta };
@@ -397,10 +412,13 @@ breadcrumbScheme.push({
   console.log(document)
   let bannerimage = c_banner_image && c_banner_image.image.url;
 
+  // console.log('c_services1', c_services1)
+
 
   return (
 
     <>
+     <Header _site={_site}/> 
 
       <JsonLd<Store>
         item={{
@@ -441,6 +459,7 @@ breadcrumbScheme.push({
         {" "}
         <AnalyticsScopeProvider name={""}>
       <PageLayout global={_site}>
+        <Banner/>
 
 
       <div className="container">
@@ -465,17 +484,43 @@ breadcrumbScheme.push({
               </div>
           }
         </div>
-  
+           {/* <div>{c_descriptiondetail}<br></br> */}
+           {/* {   c_services1}
+           {c_faqs.questions}{c_faqs.answer5674499258878274075}{c_faqs.answer3796323185192562296}{c_faqs.answer6666945051914384989}
+           console.log(falkdjhhhkjjkh)
+
+           </div> */}
+
+
+
         <div className="nearby-sec">
           <div className="container">
             <div className="sec-title"><h2 className="">{StaticData.NearStoretext}</h2></div>
             <div className="nearby-sec-inner">
-              {/* {yextDisplayCoordinate || cityCoordinate || displayCoordinate ?
+              {yextDisplayCoordinate || cityCoordinate || displayCoordinate ?
                 <Nearby externalApiData={externalApiData} /> 
-             : ''} */}
+             : ''}
             </div>
           </div>
+        <div>
+          <a href="#">{c_abouts.cTA.label}</a>
+          <img src={c_abouts.image.url}></img>
           
+          {/* {c_abouts.discription} */}
+          <h3 style={{color: "red"}}>{c_abouts.discription}</h3>
+          {/* <About aboutphoto={c_photo}/> */}
+          </div>
+          <div>
+            <Faq faqs={c_faqs}/>
+          </div>
+          <div className="">
+
+          <h1>Services</h1>
+          <div className="flex gap-6 text-center">
+            <Services services={c_services1} />
+           </div>
+          
+          </div>
         </div>
 
       </PageLayout>
