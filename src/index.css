@@ -139,11 +139,11 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .location{ @apply  border-b border-[#d8d8d8]  mt-0 }
 .location .result-inner .address-with-availablity {@apply mb-0}
 
-.location .result-inner .svg-map-icn svg{@apply fill-gray }
+.location .result-inner .svg-map-icn svg{@apply fill-gray;background-color: darkorange; }
 .location.fixed-hover .result-inner .svg-map-icn svg{@apply fill-red }
 
    
-.location .button-bx{  @apply max-w-lg justify-start xl:mx-auto pl-2 flex-row lg:pl-7}
+.location .button-bx{  @apply max-w-lg justify-start xl:mx-auto pl-2 flex-row lg:pl-7;background-color: #f4ea2d;}
 .result-list .location{ @apply first:mt-0}
 .location .button-bx .btn{@apply w-[9.75rem] bg-Dark-red font-second-main-font text-lg  border-none text-white    }
 .location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-transparent justify-start mt-0  border-none text-black underline  }
@@ -355,7 +355,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-bx h4{@apply text-red font-normal text-base uppercase }
 .phone-bx h4{@apply text-red font-normal text-base uppercase }
 .hours{ order: 0; @apply bg-hours-bg mt-5  lg:mt-0 w-full md:w-[48%] lg:w-[24.8125rem] p-4 md:p-6 lg:mr-4}
-.address-with-availablity{  @apply flex  items-start flex-col}
+.address-with-availablity{  @apply flex  items-start flex-col;background-color: darkcyan;}
 .address-with-availablity .address{  @apply pr-5}
 .address-with-availablity > div{  @apply flex-1}
 .address-with-availablity > .availablity-content{  @apply   w-full flex   flex-wrap}

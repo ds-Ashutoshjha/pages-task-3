@@ -17,7 +17,7 @@ import SearchLayout from "../components/locatorPage/SearchLayout";
 import { stagingBaseurl, favicon, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie } from "../../sites-global/global"
 import Newsletter from "../components/locatorPage/Newsletter";
 import { JsonLd } from "react-schemaorg";
-import Header from "../components/layouts/header";
+import Locatorheader from "../components/layouts/locatorheader";
 import { StaticData } from "../../sites-global/staticData";
 import {
   AnalyticsProvider,
@@ -196,7 +196,7 @@ const Locator: Template<TemplateRenderProps> = ({
           {" "}
           <AnalyticsScopeProvider name={""}>
             <PageLayout global={_site}>
-              <Header _site={_site} />
+              <Locatorheader _site={_site} />
 
               <SearchHeadlessProvider
 
