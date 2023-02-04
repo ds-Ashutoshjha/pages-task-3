@@ -985,7 +985,7 @@ nav[aria-label="Pagination"] button:disabled {
 
 /* faq */
 .faq-main-sec {
-  @apply m-0 relative pb-7 pt-0 md:pb-12;
+  @apply m-0 relative pb-7 pt-0 md:pb-12; background-color: lightseagreen;
 }
 .faq-sec {
   @apply m-0;

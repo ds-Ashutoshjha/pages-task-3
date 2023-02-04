@@ -553,7 +553,7 @@ const Location: Template<ExternalApiRenderData> = ({
                   )}
                 </div>
               </div>
-              <div>
+              <div style={{backgroundColor:"aqua"}}>
                 <a href="#">{c_abouts.cTA.label}</a>
                 <img src={c_abouts.image.url}></img>
 
