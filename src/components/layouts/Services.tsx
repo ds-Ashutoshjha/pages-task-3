@@ -7,7 +7,7 @@ type props = {
 
 const Services = (props: any) => {
   const { services } = props;
-  console.log("dsdsdsd=>", services);
+  // console.log("dsdsdsd=>", services);
 
   return (
     <>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import PhotoSlider from "../locationDetail/PhotoSlider";
 import Footer from "./footer";
 import Header from "./header";
 import Nav from "./Nav";
@@ -16,10 +17,11 @@ const PageLayout = ({
   global,
   children,
 }: Props) => {
-  console.log('global', global)
+  // console.log('global', global)
   return (
     <>
       <Header label={_site?.c_cricket} url={""} images={""} />
+      <PhotoSlider bannerImage={global.c_bannerimages}/>
       {children}
       <Footer
         image={global?.c_footerLogo}

@@ -196,7 +196,7 @@ const Locator: Template<TemplateRenderProps> = ({
           {" "}
           <AnalyticsScopeProvider name={""}>
             <PageLayout global={_site}>
-              <Locatorheader _site={_site} />
+     
 
               <SearchHeadlessProvider
 

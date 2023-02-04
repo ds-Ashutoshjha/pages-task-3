@@ -6,8 +6,8 @@ type props ={
   images: string;
 }
 
-const Locatorheader = ( props : props) => {
-  const {label,url,images}= props
+  const Locatorheader = ( props : props) => {
+    const {label,url,images}= props
   // console.log('label', images)
   
   // let NewVAr : any = props.label;
@@ -28,12 +28,12 @@ const Locatorheader = ( props : props) => {
     
   // ));
 
-  const LocatorBannerImg = props?._site.c_locatorHeaderBanner?.map((link:any) => (
-    <img src={link.url}/>
+  // const LocatorBannerImg = props?._site.c_locatorHeaderBanner?.map((link:any) => (
+    <img src={props?._site?.c_locatorHeaderBanner?.url}/>
     
     
    
- ));
+//  ));
  console.log("Ashutosh jha");
 //  console.log(props._site);
 
