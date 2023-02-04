@@ -50,7 +50,8 @@ import { Fade, Slide } from "react-awesome-reveal";
 import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import Header from "../components/layouts/header";
-  import Services from "../components/services";
+// import Services from "../components/services";
+import Services from "../components/layouts/Services";
 
 /**
  * Required when Knowledge Graph data is used for a template.
