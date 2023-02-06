@@ -25,6 +25,7 @@ import {
 } from "@yext/pages/components";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import Footer from "../components/layouts/footer";
+import Header from "../components/layouts/header";
 
 // export const config: TemplateConfig = {
 //   stream: {
@@ -179,6 +180,7 @@ const Locator: Template<TemplateRenderProps> = ({
   return (
     <>
       <div>
+      <Header _site={_site} />
         <JsonLd<locator>
           item={{
             "@context": "https://schema.org",
@@ -196,7 +198,7 @@ const Locator: Template<TemplateRenderProps> = ({
           {" "}
           <AnalyticsScopeProvider name={""}>
             <PageLayout global={_site}>
-     
+            
 
               <SearchHeadlessProvider
 
@@ -210,6 +212,7 @@ const Locator: Template<TemplateRenderProps> = ({
               >
 
                 <SearchLayout _site={_site} />
+                
 
               </SearchHeadlessProvider>
             </PageLayout>

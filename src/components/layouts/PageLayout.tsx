@@ -17,19 +17,18 @@ const PageLayout = ({
   global,
   children,
 }: Props) => {
-  // console.log('global', global)
+  console.log('global', global)
   return (
     <>
-      <Header label={_site?.c_cricket} url={""} images={""} />
+      <Header headerLogo={global?.c_logo} label={_site?.c_cricket} url={""} images={""} />
+      
       <PhotoSlider bannerImage={global.c_bannerimages}/>
       {children}
       <Footer
-        image={global?.c_footerLogo}
+          imagelogo={global?.c_footerLogo}
+        //  image={c_footerLogo}
         cricket={global?.c_cricket}
-        bCCI={global?.c_bCCI}
-
-
-      />
+        bCCI={global?.c_bCCI} />
     </>
   );
 };

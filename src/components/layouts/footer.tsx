@@ -179,7 +179,7 @@ import * as React from "react";
 
 type Link = {
     label: string;
-	image: any;
+	imagelogo: any;
 	cricket: any;
 	bCCI: any;
 };
@@ -190,16 +190,19 @@ type Link = {
 const Footer = (props: Link) => {
 
 
-	const { bCCI, cricket, image } = props
+	const { label,bCCI, cricket, imagelogo } = props
 	// console.log('bCCI', bCCI)
+	
+	console.log(imagelogo.url+"premsaini");
 
 	return (
 		<>
-			<footer className="inline-block w-full footer-1 bg-black-100 py-8 sm:py-12" style={{ backgroundColor: "skyblue" }}>
+			<footer className="inline-block w-full footer-1 bg-black-100 text-white py-8 sm:py-12" style={{ backgroundColor: "teal" }}>
 				<div className="container mx-auto px-4">
 					<div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
-						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
+						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 font-semibold">
 							<ul className="list-none footer-links">
+								
 								<li className="mb-2">
 									{bCCI?.map((item: any) => {
 										return (
@@ -217,7 +220,7 @@ const Footer = (props: Link) => {
 
 							</ul>
 						</div>
-						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0">
+						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0 text-right font-semibold">
 							<ul className="list-none footer-links">
 								{cricket?.map((item: any) => {
 									return (
@@ -230,11 +233,14 @@ const Footer = (props: Link) => {
 										</>
 									);
 								})}
-
+  
 							</ul>
 						</div>
-
-
+						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0 text-right font-semibold mr-6 ">
+							<img src={imagelogo?.url} style={{height:"200px",width:"auto",marginLeft:"900px"}}/>
+						</div>
+                         
+                        
 					</div>
 
 				</div>

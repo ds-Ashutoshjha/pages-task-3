@@ -43,7 +43,7 @@ a {
 
 body {
   @apply font-main-font text-sm md:text-base text-gray;
-  background: darkseagreen;
+  background: rgb(243, 243, 239);
 }
 
 h1 {
@@ -776,7 +776,7 @@ nav[aria-label="Pagination"] button:disabled {
 }
 .address-with-availablity {
   @apply flex  items-start flex-col;
-  background-color: darkcyan;
+  background-color: rgb(235, 245, 245);
 }
 .address-with-availablity .address {
   @apply pr-5;
@@ -985,7 +985,7 @@ nav[aria-label="Pagination"] button:disabled {
 
 /* faq */
 .faq-main-sec {
-  @apply m-0 relative pb-7 pt-0 md:pb-12; background-color: lightseagreen;
+  @apply m-0 relative pb-7 pt-0 md:pb-12; background-color: rgb(232, 246, 246);
 }
 .faq-sec {
   @apply m-0;

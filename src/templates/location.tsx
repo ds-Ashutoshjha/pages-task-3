@@ -508,6 +508,7 @@ const Location: Template<ExternalApiRenderData> = ({
                 }
                 hours={hours}
                 additionalHoursText={additionalHoursText}
+                // services = {c_services1} />
               ></Contact>
               {hours ? (
                 <div className="map-sec" id="map_canvas">
@@ -553,7 +554,7 @@ const Location: Template<ExternalApiRenderData> = ({
                   )}
                 </div>
               </div>
-              <div style={{backgroundColor:"aqua"}}>
+              <div style={{backgroundColor:"white"}}>
                 <a href="#">{c_abouts.cTA.label}</a>
                 <img src={c_abouts.image.url}></img>
 
@@ -565,15 +566,16 @@ const Location: Template<ExternalApiRenderData> = ({
                 <Faq faqs={c_faqs} />
               </div>
               <div className="">
-                <h1>Services</h1>
+                {/* <h1>Services</h1>
                 <div className="flex gap-6 text-center">
                   <Services services={c_services1} />
-                </div>
+                </div> */}
               </div>
             </div>
           </PageLayout>
         </AnalyticsScopeProvider>
       </AnalyticsProvider>
+      
     </>
   );
 };

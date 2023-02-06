@@ -1,16 +1,17 @@
 import * as React from "react";
 
 type props ={
+  headerLogo:any;
   label: any;
   url : string;
   images: string;
 }
 
 const Header = ( props : props) => {
-  const {label,url,images}= props
+  const {headerLogo,label,url,images}= props
   // console.log('label', images)
   
-  // let NewVAr : any = props.label;
+  // let NewVAr : any = props.label;label,
   // console.log(props.label,"Props");
   const linkDoms = props?._site?.c_bCCI?.map((link:any) => (
     <a className="navbar-item" href={link.link} >
@@ -20,11 +21,11 @@ const Header = ( props : props) => {
 
 // console.log(props._bannerbjhjk.c_banner1);
 
-  const BannerImg = props?._banner?.c_banner1?.map((link:any) => (
-     <img src={link.url}/>
+  // const BannerImg = props?._banner?.c_banner1?.map((link:any) => (
+  //    <img src={link.url}/>
      
     
-  ));
+  // ));
 
 
 
@@ -32,10 +33,13 @@ const Header = ( props : props) => {
   return (
     <>
      
-             <div style={{backgroundColor:"skyblue",height:"50px", padding:"5px",textAlign:"center",}}>
+             <div className="">
+             <div>
+                             <img style={{height:"100px",width:"100px"}} src={headerLogo?.url}/>
+                        </div>        
             <div style={{marginLeft:"300px",fontSize:"Oswald"}} className="flex gap-x-10 text-lg font-semibold">
               {linkDoms}</div>
-              {BannerImg}
+              {/* {BannerImg} */}
             </div>
           {/* </nav>
         </div>

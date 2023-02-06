@@ -107,7 +107,13 @@ function opentime(e: any) {
                    </div>}
 
             </div>
-         
+         {result.rawData.c_services1.map((item:any)=>{
+return(<>
+<div style={{fontWeight:"600",fontSize:"18px",color:"lightgreen"}}>
+{item.name}
+</div>
+</>)
+         })}
              <div className="button-bx">
               <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
               data-ya-track={`viewStore -${result.rawData.name}`}
