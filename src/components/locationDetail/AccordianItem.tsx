@@ -10,7 +10,7 @@ const AccordionItem = ({
   onClick,
 }) => (
     
-  <div className="faq-tab py-0 mt-2" key={item.question}>
+  <div className="faq-tab py-0 mt-2" key={item.question + index + 1}>
 
       <button
         aria-expanded={ariaExpanded}
@@ -20,7 +20,7 @@ const AccordionItem = ({
         onClick={onClick}
       >
       <h3 className={`faq-tab-label  ${background} `}>
-      <div dangerouslySetInnerHTML={{__html: RtfConverter.toHTML(item.question)}}/>
+      <div dangerouslySetInnerHTML={{__html: RtfConverter.toHTML(item.question , index + 1)}}/>
      </h3>
       </button>
       <div
@@ -28,7 +28,7 @@ const AccordionItem = ({
         data-qa="faq__desc"
         className={`faq-tab-content ${showDescription}`}
       >
-       <div dangerouslySetInnerHTML={{__html: RtfConverter.toHTML(item.answer)}}/> 
+       <div dangerouslySetInnerHTML={{__html: RtfConverter.toHTML(item.answer , index+1)}}/> 
       </div>
   </div>
 );

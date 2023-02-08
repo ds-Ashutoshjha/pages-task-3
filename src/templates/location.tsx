@@ -543,7 +543,7 @@ const Location: Template<ExternalApiRenderData> = ({
             {/* <div>{c_descriptiondetail}<br></br> */}
             {/* {   c_services1}
            {c_faqs.questions}{c_faqs.answer5674499258878274075}{c_faqs.answer3796323185192562296}{c_faqs.answer6666945051914384989}
-           console.log(falkdjhhhkjjkh)
+          //  console.log(falkdjhhhkjjkh)
 
            </div> */}
 

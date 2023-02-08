@@ -196,9 +196,12 @@ const Footer = (props: Link) => {
 
 	return (
 		<>
-			<footer className="inline-block w-full footer-1 bg-black-100 text-white py-8 sm:py-12" style={{ backgroundColor: "teal" }}>
+			<footer className="inline-block w-full footer-1 bg-black-100 text-white py-8 sm:py-12" style={{ backgroundColor: "#850039" }}>
 				<div className="container mx-auto px-4">
 					<div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
+					<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0 font-semibold mr-6 ">
+							<img src={imagelogo?.url} style={{height:"200px",width:"auto"}}/>
+						</div>
 						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 font-semibold">
 							<ul className="list-none footer-links">
 								
@@ -219,7 +222,8 @@ const Footer = (props: Link) => {
 
 							</ul>
 						</div>
-						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0 text-right font-semibold">
+						
+						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0 font-semibold">
 							<ul className="list-none footer-links">
 								{cricket?.map((item: any) => {
 									return (
@@ -235,8 +239,41 @@ const Footer = (props: Link) => {
   
 							</ul>
 						</div>
-						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0 text-right font-semibold mr-6 ">
-							<img src={imagelogo?.url} style={{height:"200px",width:"auto",marginLeft:"900px"}}/>
+						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0 font-semibold">
+							<ul className="list-none footer-links">
+								{cricket?.map((item: any) => {
+									return (
+										<>
+											<p>
+												<a href="#">
+													{item.label}
+												</a>
+											</p>
+										</>
+									);
+								})}
+  
+							</ul>
+						</div>
+						<div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 font-semibold">
+							<ul className="list-none footer-links">
+								
+								<li className="mb-2">
+									{bCCI?.map((item: any) => {
+										return (
+											<>
+												<p>
+													<a href="#">
+														{item.label}
+													</a>
+												</p>
+											</>
+										);
+									})}
+
+								</li>
+
+							</ul>
 						</div>
                          
                         
