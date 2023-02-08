@@ -30,8 +30,8 @@ const Timer = (props:any) => {
    return a.map(format).join(s);
      } 
 
-  console.log(weeks[d.getDay()])
-  console.log(week.props.hours)
+  // console.log(weeks[d.getDay()])
+  // console.log(week.props.hours)
   for (const key in week.props.hours) {
 if(week.props.hours!="undefined"){
  

@@ -79,9 +79,10 @@ export const config: TemplateConfig = {
       "c_faqs.question",
       "c_faqs.answer",
       "c_abouts",
-      "c_services1.name",
-      "c_services1.slug",
-      "c_services1.c_price",
+      // "c_services1.name",
+      // "c_services1.slug",
+      // "c_services1.c_price",
+      "c_headerfooterservices.name",
       "hours",
       "slug",
       "timezone",
@@ -260,23 +261,30 @@ type ExternalApiData = TemplateProps & { externalApiData: nearByLocation };
 export const transformProps: TransformProps<ExternalApiData> = async (
   data: any
 ) => {
-  var location = `${
-    data.document.yextDisplayCoordinate
-      ? data.document.yextDisplayCoordinate.latitude
-      : data.document.displayCoordinate.latitude
-  },${
-    data.document.yextDisplayCoordinate
-      ? data.document.yextDisplayCoordinate.longitude
-      : data.document.displayCoordinate.longitude
-  }`;
-
-  const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=4&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
-  console.log(url);
+  
+  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=US&api_key=92fe7ef5c98bb142dad64ce862b09df6&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=4`
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;
   return { ...data, externalApiData };
 };
+  // var location = `${
+  //   data.document.yextDisplayCoordinate
+  //     ? data.document.yextDisplayCoordinate.latitude
+  //     : data.document.displayCoordinate.latitude
+  // },${
+  //   data.document.yextDisplayCoordinate
+  //     ? data.document.yextDisplayCoordinate.longitude
+  //     : data.document.displayCoordinate.longitude
+  // }`;
+
+//   const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=4&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
+//   console.log(url);
+//   const externalApiData = (await fetch(url).then((res: any) =>
+//     res.json()
+//   )) as nearByLocation;
+//   return { ...data, externalApiData };
+// };
 
 type ExternalApiRenderData = TemplateRenderProps & {
   externalApiData: nearByLocation;
@@ -299,7 +307,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_faqs,
     c_abouts,
     // c_cta1,
-    c_services1,
+    c_headerfooterservices,
     photoGallery,
     c_banner_image,
     c_canonical,
@@ -400,7 +408,7 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            console.log(j, "j");
+            // console.log(j, "j");
             url = url + "/" + j.slug;
           }
         });
@@ -433,7 +441,7 @@ const Location: Template<ExternalApiRenderData> = ({
         return element.image.url;
       })
     : null;
-  console.log(document);
+  // console.log(document);
   let bannerimage = c_banner_image && c_banner_image.image.url;
 
   // console.log('c_services1', c_services1)

@@ -17,7 +17,7 @@ const PageLayout = ({
   global,
   children,
 }: Props) => {
-  console.log('global', global)
+  // console.log('global', global)
   return (
     <>
       <Header headerLogo={global?.c_logo} label={_site?.c_cricket} url={""} images={""} />

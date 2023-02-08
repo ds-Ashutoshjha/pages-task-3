@@ -191,9 +191,8 @@ const Footer = (props: Link) => {
 
 
 	const { label,bCCI, cricket, imagelogo } = props
-	// console.log('bCCI', bCCI)
+
 	
-	console.log(imagelogo.url+"premsaini");
 
 	return (
 		<>
