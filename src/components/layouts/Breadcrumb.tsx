@@ -3,10 +3,10 @@ import { breadcrumbhome, conversionDetailsDirection } from "../../../sites-globa
 import { regionNames } from "../../../sites-global/global";
 import { Link } from "@yext/pages/components";
 type data = {
-  name: any;
+  address: any;
   parents: any;
   baseUrl: any;
-  address: any;
+  name:any;
 };
 
 const BreadCrumbs = (props: data) => {

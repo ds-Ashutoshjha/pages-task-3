@@ -24,6 +24,7 @@ import {
 import PageLayout from "../components/layouts/PageLayout";
 // import { stagingBaseUrl } from "../config/globalConfig";
 // import Herobanner from "../components/commons/Herobanner";
+import BreadCrumbs from "../components/layouts/Breadcrumb";
 
 var currentUrl = "";
 export const config: TemplateConfig = {
@@ -278,12 +279,12 @@ const Country: Template<TemplateRenderProps> = ({
         <PageLayout global={_site}>
        {/* <Header personal={_site.c_personal} bussiness={_site.c_business} findAStore={_site.c_findAStore} networkStatusChecker={_site.c_networkStatusChecker}></Header> */}
        {/* <Header navbar={_site.c_navigationBarLinks}></Header> */}
-      {/* <BreadCrumbs
+      <BreadCrumbs
         name={name}
         parents={dm_directoryParents}
         baseUrl={relativePrefixToRoot}
         address={{}}
-      ></BreadCrumbs> */}
+      ></BreadCrumbs>
        <div className="header-title ">
           {/* <Herobanner c_bannerTitle={_site.c_bannerTitle}></Herobanner> */}
         </div>
