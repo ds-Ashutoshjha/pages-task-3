@@ -629,12 +629,18 @@ const City: Template<TemplateRenderProps> = ({
       
       {/* <Header navbar={_site.c_navigationBarLinks}></Header> */}
       {/* <Header personal={_site.c_personal} bussiness={_site.c_business} findAStore={_site.c_findAStore} networkStatusChecker={_site.c_networkStatusChecker}></Header> */}
-      <BreadCrumbs
+      {/* <BreadCrumbs
         name={name}
         parents={dm_directoryParents}
         baseUrl={relativePrefixToRoot}
         address={{}}
-      ></BreadCrumbs>
+      ></BreadCrumbs> */}
+      <BreadCrumbs
+          name={name}
+          address={address}
+          parents={dm_directoryParents}
+          baseUrl={relativePrefixToRoot}
+        ></BreadCrumbs>
        <div className="header-title ">
           {/* <Herobanner c_bannerTitle={_site.c_bannerTitle}></Herobanner> */}
         </div>

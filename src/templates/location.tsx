@@ -163,6 +163,8 @@ export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
   return [`index-old/${document.id}`];
 };
 
+
+
 /**
  * This allows the user to define a function which will take in their template
  * data and procude a HeadConfig object. When the site is generated, the HeadConfig
@@ -517,7 +519,13 @@ const Location: Template<ExternalApiRenderData> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout global={_site}>
-            <BreadCrumbs name={name} address={address} parents={dm_directoryParents}/>
+            {/* <BreadCrumbs name={name} address={address} parents={dm_directoryParents}/> */}
+            <BreadCrumbs
+          name={name}
+          address={address}
+          parents={dm_directoryParents}
+          baseUrl={relativePrefixToRoot}
+        ></BreadCrumbs>
             <div className="container">
               <div className="banner-text banner-dark-bg justify-center text-center">
                 <h1 className="">
