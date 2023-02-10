@@ -106,7 +106,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
       url = `${i.slug}`
     }
     else if (i.meta.entityType.id == 'ce_region') {
-      url = `${url}/${i.slug}/${document.slug.toString()}`
+      url = `${url}/${i.slug}/${document.slug.toString()}.html`
     }
   })
   return url;
@@ -306,10 +306,10 @@ const City: Template<TemplateRenderProps> = ({
       "");
     let result: any = removeSpecialCharacters.replaceAll(" ", "-");
     if(!entity.slug || entity.slug == "undefined"){
-      detailPageUrl = `${entity.id}-${result}.html`
+      detailPageUrl = `${entity.id}-${result}`
     }
     else{
-      detailPageUrl = `${entity.slug.toString()}.html`
+      detailPageUrl = `${entity.slug.toString()}`
     }
     return (
       <>
