@@ -3,10 +3,10 @@ import { breadcrumbhome, conversionDetailsDirection } from "../../../sites-globa
 import { regionNames } from "../../../sites-global/global";
 import { Link } from "@yext/pages/components";
 type data = {
-  address: any;
+  name: any;
   parents: any;
   baseUrl: any;
-  name:any;
+  address: any;
 };
 
 const BreadCrumbs = (props: data) => {
@@ -83,7 +83,6 @@ const BreadCrumbs = (props: data) => {
       <div className="container mx-auto">
         <ul className="flex">
           <li>
-            
             <Link className="home" href="/"
              data-ya-track="Breadcrumbs"
              eventName={`Breadcrumbs`}
