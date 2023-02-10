@@ -279,7 +279,8 @@ const State: Template<TemplateRenderProps> = ({
             <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
               <Link
                 key={entity.slug}
-                href={entity.dm_directoryChildren[0].slug + ".html"}
+                // href={entity.dm_directoryChildren[0].slug + ".html"}
+                   href={"/" + entity.dm_directoryChildren[0].slug}
                 className="hover:text-red"
                 eventName={entity.name}
               >
@@ -297,7 +298,7 @@ const State: Template<TemplateRenderProps> = ({
           );
           let result: any = removeSpecialCharacters.replaceAll("  ", "-");
           let finalString: any = result.replaceAll(" ", "-");
-          url = `${entity.dm_directoryChildren[0].id}-${finalString}.html`;
+          url = `${entity.dm_directoryChildren[0].id}-${finalString}`;
           return (
             <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
               <Link key={entity.slug} href={"/" + url} className="hover:text-red" rel="noopener noreferrer" eventName={`LocationName`}>
@@ -312,7 +313,7 @@ const State: Template<TemplateRenderProps> = ({
           <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
             <Link
               key={entity.slug}
-              href={"/" + entity.slug + ".html"}
+              href={"/" + entity.slug}
               className="hover:text-red"
               rel="noopener noreferrer" eventName={`name`}
             >
