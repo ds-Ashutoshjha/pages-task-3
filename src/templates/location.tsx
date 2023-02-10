@@ -110,24 +110,49 @@ export const config: TemplateConfig = {
  * NOTE: This currently has no impact on the local dev path. Local dev urls currently
  * take on the form: featureName/entityId
  */
+// export const getPath: GetPath<TemplateProps> = ({ document }) => {
+//   var url = "";
+//   var name: any = document.name.toLowerCase();
+//   var string: any = name.toString();;
+//   let result: any = string.replaceAll(" ", "-");
+//   document.dm_directoryParents.map((result: any, i: Number) => {
+//     if (i > 0) {
+//       url += result.slug + "/"
+//     }
+//   })
+//   if (!document.slug) {
+//     url += `${result}.html`;
+//   } else {
+//     url += `${document.slug.toString()}.html`;
+//   }
+
+//   return document.id;
+// };
+
+
+var url = "";
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  var url = "";
-  var name: any = document.name.toLowerCase();
-  var string: any = name.toString();;
-  let result: any = string.replaceAll(" ", "-");
-  document.dm_directoryParents.map((result: any, i: Number) => {
-    if (i > 0) {
-      url += result.slug + "/"
+  var url: any = ""
+  document.dm_directoryParents.map((i: any) => {
+    if (i.meta.entityType.id == 'ce_country') {
+      url = `${i.slug}`
+    }
+    else if (i.meta.entityType.id == 'ce_region') {
+      url = `${url}/${i.slug}`
+    }
+    else if (i.meta.entityType.id == "ce_city"){
+      url = `${url}/${i.slug}/${document.slug.toString()}`
     }
   })
-  if (!document.slug) {
-    url += `${result}.html`;
-  } else {
-    url += `${document.slug.toString()}.html`;
-  }
-
-  return document.id;
+  return url;
 };
+
+
+
+
+
+
+
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
  *
