@@ -599,14 +599,18 @@ const Location: Template<ExternalApiRenderData> = ({
                   )}
                 </div>
               </div>
+              
+                
               <div style={{backgroundColor:"white"}}>
                 <a href="#">{c_abouts.cTA.label}</a>
-                <img src={c_abouts.image.url}></img>
-
-                {/* {c_abouts.discription} */}
+                <img src={c_abouts.image.url}/> 
+                               
                 <h3 style={{ color: "red" }}>{c_abouts.discription}</h3>
-                {/* <About aboutphoto={c_photo}/> */}
+                
               </div>
+
+             
+             
               <div>
                 <Faq faqs={c_faqs} />
               </div>
