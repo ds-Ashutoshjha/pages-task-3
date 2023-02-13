@@ -119,7 +119,7 @@ function UnwrappedGoogleMaps({
 
   const refLocationResults = useRef({});
 
-  const locationResults = useSearchState(state => state.vertical?.results) || [];
+  const locationResults = useFetchResults() || [];
   refLocationResults.current = locationResults;
 
   locationResults.length > 0
@@ -282,7 +282,7 @@ function UnwrappedGoogleMaps({
 
         if (markers1.current.length == 1) {
           map.setCenter(center);
-          map.setZoom(10);
+          map.setZoom(2);
         } else if (markers1.current.length > 0) {
           for (let i = 0; i < locationResults.length; i++) {
             centerlast = {
