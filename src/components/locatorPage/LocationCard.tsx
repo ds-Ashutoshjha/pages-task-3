@@ -107,10 +107,12 @@ function opentime(e: any) {
                    </div>}
 
             </div>
-         {result.rawData.c_services1.map((item:any)=>{
+        {result.rawData.c_services1.map((item:any)=>{
+        
 return(<>
-<div style={{fontWeight:"600",fontSize:"18px",color:"lightgreen"}}>
+<div style={{fontWeight:"600",fontSize:"18px",color:"teal"}}>
 {item.name}
+
 </div>
 </>)
          })}
