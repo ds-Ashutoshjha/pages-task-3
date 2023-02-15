@@ -54,6 +54,8 @@ function opentime(e: any) {
    url= `${name1}`;
  }
   
+
+
   return (
     <div className={`location result-list-inner-${result.id} result`} id={`result-${result.id}`} key={`result-${result.rawData.id}`}>
       <div className="result-inner ">

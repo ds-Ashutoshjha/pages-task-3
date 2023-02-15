@@ -137,7 +137,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
       url = `${i.slug}`;
     } else if (i.meta.entityType?.id == "ce_region") {
       url = `${url}/${i.slug}`;
-    } else if (i.meta.entityType?.id == "ce_city") {
+    } else if (i.meta.entityType?.id == "ce_city") { 
       url = `${url}/${i.slug}/${document?.slug?.toString()}`;
     }
   })
@@ -596,6 +596,7 @@ const Location: Template<ExternalApiRenderData> = ({
               </div>
 
               <div>
+                {/* <input type="search" placeholder="ergrtgh" style={{color:"red", width:"500px"}}></input> */}
                 <Faq faqs={c_faqs} />
               </div>
               <div className="">
