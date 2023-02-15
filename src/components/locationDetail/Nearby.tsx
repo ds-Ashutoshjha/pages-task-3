@@ -9,16 +9,18 @@ import Phonesvg from "../../images/phone.svg"
 import { Addresssvg, mobilesvg, View_Store } from "../../../sites-global/global";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Link } from "@yext/pages/components";
+import { StaticData } from "../../../sites-global/staticData";
 
 export default function Nearby(props: any) {
   
-  const [neabyData, setnearbyData] = React.useState(props.externalApiData.response.entities);
+  const [neabyData, setnearbyData] = React.useState(props.externalApiData.response);
+  // console.log(neabyData,"452881415152")
   const metersToMiles = (meters: number) => {
 
     const miles = meters * 0.000621371;
     return miles.toFixed(2);
   }
-
+console.log("neabyData",neabyData);
   return (
 
     <>
@@ -44,23 +46,25 @@ export default function Nearby(props: any) {
           },
         }}
       > */}
-        {neabyData?.map((location: any, index: Number) => {
+        {neabyData?.entities?.map((location: any, index: Number) => {
 
-          // let url = "";
-          // var name: any = location.name?.toLowerCase();
-          // var region: any = location.address.region?.toLowerCase();
-          // var initialregion: any = region.toString();
-          // var finalregion: any = initialregion.replaceAll(" ", "-");
-          // var city: any = location.address.city?.toLowerCase();
-          // var initialrcity: any = city.toString();
-          // var finalcity: any = initialrcity.replaceAll(" ", "-");
-          // var string: any = name.toString();
-          // let result1: any = string.replaceAll(" ", "-");
-          // if (!location.slug) {
-          //   url = `/${location.id}-${result1}.html`;
-          // } else {
-          //   url = `/${location.slug.toString()}.html`;
-          // }
+          let url = "";
+          var name: any = location.name?.toLowerCase();
+          var countryCode:any =location.address.countryCode?.toLocaleLowerCase();
+          var region: any = location.address.region?.toLowerCase();
+          var initialregion: any = region.toString();
+          var finalregion: any = initialregion.replaceAll(" ", "-");
+          var city: any = location.address.city?.toLowerCase();
+          var initialrcity: any = city.toString();
+          var finalcity: any = initialrcity.replaceAll(" ", "-");
+          var string: any = name.toString();
+          let result1: any = string.replaceAll(" ", "-");
+          var name1:any=countryCode+"/"+finalregion+"/"+finalcity+"/"+location.slug;
+          if (!location.slug) {
+            url = `/${location.id}-${result1}.html`;
+          } else {
+            url = `${name1}`;
+          }
       
           // if (index > 0) {
             return (
@@ -68,12 +72,29 @@ export default function Nearby(props: any) {
                 {/* <SplideSlide key={index}> */}
                   <div className="nearby-card">
                     <div className="location-name-miles icon-row">
-                      <h2><Link className="inline-block notHighlight" href={`/${location.id}`}
+                      <h2><Link className="inline-block notHighlight" href={`/${url}`}
                         data-ya-track={`${location.name}`}
                         eventName={`${location.name}`}
                         rel="noopener noreferrer">{location.name}</Link></h2>
 
                     </div>
+                    <div className="distance">
+                  {metersToMiles(location.distancesmiles)} <span>{StaticData.miles}</span>
+                  {/* {neabyData.distances?.map((miles:any)=>{
+                    // console.log("miles",miles)
+                    if(miles.id==location.meta.id){
+                      return(
+                        <>
+                        {miles.distanceMiles}
+                        <span>{StaticData.miles}</span>
+                        </>
+                      )
+                    }
+                  })} */}
+                 
+
+                </div>
+                                
                     <div className="icon-row content-col">
                       <Address address={location.address} />
                     </div>
@@ -93,7 +114,7 @@ export default function Nearby(props: any) {
                     }
                     </div> 
                     <div className="button-bx">
-                      <Link className="btn" href={`/${location.id}`}
+                      <Link className="btn" href={`/${url}`}
                        data-ya-track={`viewstore-${location.name}`}
                        eventName={`viewstore-${location.name}`}
                        rel="noopener noreferrer">
@@ -107,7 +128,7 @@ export default function Nearby(props: any) {
               </>
 
             )
-          // }
+          //  }
         }
 
         )

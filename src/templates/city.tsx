@@ -299,18 +299,41 @@ const City: Template<TemplateRenderProps> = ({
     }
     // let key: any = Object.keys(entity.hours)[0];
     let detailPageUrl = '';
+    let countrycode = '';
+    let statecode = '';
     var name: any = entity.name.toLowerCase();
     var string: any = name.toString();
     let removeSpecialCharacters = string.replace(
       /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
       "");
+    // let result: any = removeSpecialCharacters.replaceAll(" ", "-");
+    // if(!entity.slug || entity.slug == "undefined"){
+    //   detailPageUrl = `${entity.id}-${result}`
+    // }
+    // else{
+    //   detailPageUrl = `${entity.slug.toString()}`
+    // }
+
+
+
     let result: any = removeSpecialCharacters.replaceAll(" ", "-");
     if(!entity.slug || entity.slug == "undefined"){
       detailPageUrl = `${entity.id}-${result}`
+     
     }
     else{
-      detailPageUrl = `${entity.slug.toString()}`
+          countrycode = `${entity?.address?.countryCode.toLowerCase()
+            .replace(/ /g, '-')
+            .replace(/[^\w-]+/g, '')}`;
+            statecode = `${entity?.address?.region.toLowerCase()
+              .replace(/ /g, '-')
+              .replace(/[^\w-]+/g, '')}`;
+              detailPageUrl = `${countrycode+"/"+statecode+"/"+document.slug+"/"+entity.slug.toString()}`;
+          // console.log(url);
     }
+
+
+
     return (
       <>
      

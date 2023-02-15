@@ -241,6 +241,7 @@ const State: Template<TemplateRenderProps> = ({
   const {
     name,
     description,
+    slug,
     c_globalData,
     dm_directoryParents,
     dm_directoryChildren,
@@ -271,6 +272,14 @@ const State: Template<TemplateRenderProps> = ({
       url = document.slug.toString();
       let url1: any = "";
       url1 = url.replace(/(\b\S.+\b)(?=.*\1)/g, "").trim();
+
+      let country = document.dm_directoryParents[1].slug;
+      let state = slug;
+      let urlsingle = country+"/"+state+"/"+entity.slug;
+
+
+
+
       if (entity.dm_directoryChildrenCount == 1) {
         if (
           entity.dm_directoryChildren &&
@@ -281,7 +290,7 @@ const State: Template<TemplateRenderProps> = ({
               <Link
                 key={entity.slug}
                 // href={entity.dm_directoryChildren[0].slug + ".html"}
-                   href={"/" + entity.dm_directoryChildren[0].slug}
+                href={"/"+urlsingle+"/" + entity.dm_directoryChildren[0].slug}
                 className="hover:text-red"
                 eventName={entity.name}
               >
@@ -314,7 +323,7 @@ const State: Template<TemplateRenderProps> = ({
           <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
             <Link
               key={entity.slug}
-              href={"/" + entity.slug}
+              href={slug +"/" + entity.slug + ".html"}
               className="hover:text-red"
               rel="noopener noreferrer" eventName={`name`}
             >

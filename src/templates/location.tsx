@@ -129,29 +129,20 @@ export const config: TemplateConfig = {
 //   return document.id;
 // };
 
-
 var url = "";
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  var url: any = ""
-  document.dm_directoryParents.map((i: any) => {
-    if (i.meta.entityType.id == 'ce_country') {
-      url = `${i.slug}`
-    }
-    else if (i.meta.entityType.id == 'ce_region') {
-      url = `${url}/${i.slug}`
-    }
-    else if (i.meta.entityType.id == "ce_city"){
-      url = `${url}/${i.slug}/${document.slug.toString()}`
+  var url: any = "";
+  document.dm_directoryParents?.map((i: any) => {
+    if (i.meta.entityType.id == "ce_country") {
+      url = `${i.slug}`;
+    } else if (i.meta.entityType?.id == "ce_region") {
+      url = `${url}/${i.slug}`;
+    } else if (i.meta.entityType?.id == "ce_city") {
+      url = `${url}/${i.slug}/${document?.slug?.toString()}`;
     }
   })
   return url;
 };
-
-
-
-
-
-
 
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
@@ -162,8 +153,6 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
   return [`index-old/${document.id}`];
 };
-
-
 
 /**
  * This allows the user to define a function which will take in their template
@@ -290,22 +279,21 @@ type ExternalApiData = TemplateProps & { externalApiData: nearByLocation };
 export const transformProps: TransformProps<ExternalApiData> = async (
   data: any
 ) => {
-  
-  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=US&api_key=92fe7ef5c98bb142dad64ce862b09df6&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=4`
+  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=US&api_key=92fe7ef5c98bb142dad64ce862b09df6&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=4`;
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;
   return { ...data, externalApiData };
 };
-  // var location = `${
-  //   data.document.yextDisplayCoordinate
-  //     ? data.document.yextDisplayCoordinate.latitude
-  //     : data.document.displayCoordinate.latitude
-  // },${
-  //   data.document.yextDisplayCoordinate
-  //     ? data.document.yextDisplayCoordinate.longitude
-  //     : data.document.displayCoordinate.longitude
-  // }`;
+// var location = `${
+//   data.document.yextDisplayCoordinate
+//     ? data.document.yextDisplayCoordinate.latitude
+//     : data.document.displayCoordinate.latitude
+// },${
+//   data.document.yextDisplayCoordinate
+//     ? data.document.yextDisplayCoordinate.longitude
+//     : data.document.displayCoordinate.longitude
+// }`;
 
 //   const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=4&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
 //   console.log(url);
@@ -521,11 +509,11 @@ const Location: Template<ExternalApiRenderData> = ({
           <PageLayout global={_site}>
             {/* <BreadCrumbs name={name} address={address} parents={dm_directoryParents}/> */}
             <BreadCrumbs
-          name={name}
-          address={address}
-          parents={dm_directoryParents}
-          baseUrl={relativePrefixToRoot}
-        ></BreadCrumbs>
+              name={name}
+              address={address}
+              parents={dm_directoryParents}
+              baseUrl={relativePrefixToRoot}
+            ></BreadCrumbs>
             <div className="container">
               <div className="banner-text banner-dark-bg justify-center text-center">
                 <h1 className="">
@@ -599,18 +587,14 @@ const Location: Template<ExternalApiRenderData> = ({
                   )}
                 </div>
               </div>
-              
-                
-              <div style={{backgroundColor:"white"}}>
+
+              <div style={{ backgroundColor: "white" }}>
                 <a href="#">{c_abouts.cTA.label}</a>
-                <img src={c_abouts.image.url}/> 
-                               
+                <img src={c_abouts.image.url} />
+
                 <h3 style={{ color: "red" }}>{c_abouts.discription}</h3>
-                
               </div>
 
-             
-             
               <div>
                 <Faq faqs={c_faqs} />
               </div>
@@ -624,7 +608,6 @@ const Location: Template<ExternalApiRenderData> = ({
           </PageLayout>
         </AnalyticsScopeProvider>
       </AnalyticsProvider>
-      
     </>
   );
 };
