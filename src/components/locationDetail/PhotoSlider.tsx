@@ -4,15 +4,23 @@ import '@splidejs/react-splide/css';
 
 const PhotoSlider = (props: any) => {
   const { bannerImage, height, width } = props;  
-  const photos = bannerImage?.map((element:any) => (   
+  const options = {
+    type         : 'loop',
+    autoplay     : true,
+    pauseOnHover : false,
+    resetProgress: false,
+  };
+  const photos = bannerImage?.map((element:any) => ( 
+
 
 	<SplideSlide>
     <img height={height} width={width} src={element?.image?.url} />
 	</SplideSlide>    
   ));
   return (
+
     <>
-	  <Splide aria-label="Photo Slider">
+	  <Splide aria-label="Photo Slider" options={options}>
           {photos}
       </Splide>
     </>
