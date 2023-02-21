@@ -16,7 +16,7 @@ const PhotoSlider = (props: any) => {
 	<SplideSlide>
     <div className="banner">
     <h2>{c_bannerTagline}</h2>
-    <a href={c_bannerButton.link}>{c_bannerButton.label}</a>
+    {/* <a href={c_bannerButton.link}>{c_bannerButton.label}</a> */}
     <img height={height} width={width} src={element?.image?.url} />
    
     </div>
@@ -26,8 +26,6 @@ const PhotoSlider = (props: any) => {
 
     <>
 	  <Splide aria-label="Photo Slider" options={options}>
-          {photos}
-        
       </Splide>
     </>
   );

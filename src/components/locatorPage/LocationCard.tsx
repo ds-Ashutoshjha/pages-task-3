@@ -102,7 +102,7 @@ function opentime(e: any) {
                     hours={hours}
                     deliveryHours={hours}
                   ></OpenClose>
-                 <button><svg className="mt-2" xmlns="http://www.w3.org/2000/svg" width="19.585" height="7.793" viewBox="0 0 9.585 4.793">
+                 <button><svg className="mt-2 ml-4" xmlns="http://www.w3.org/2000/svg" width="19.585" height="7.793" viewBox="0 0 9.585 4.793">
                   <path id="hrd-drop" d="M9,13.5l4.793,4.793L18.585,13.5Z" transform="translate(-9 -13.5)" fill="#00363f"></path>
                  </svg></button>
                  </div>
