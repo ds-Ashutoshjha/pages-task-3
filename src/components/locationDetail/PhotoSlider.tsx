@@ -3,7 +3,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
 const PhotoSlider = (props: any) => {
-  const { bannerImage, height, width } = props;  
+  const { bannerImage, height, width,c_bannerTagline,c_bannerButton } = props;  
   const options = {
     type         : 'loop',
     autoplay     : true,
@@ -14,7 +14,12 @@ const PhotoSlider = (props: any) => {
 
 
 	<SplideSlide>
+    <div className="banner">
+    <h2>{c_bannerTagline}</h2>
+    <a href={c_bannerButton.link}>{c_bannerButton.label}</a>
     <img height={height} width={width} src={element?.image?.url} />
+   
+    </div>
 	</SplideSlide>    
   ));
   return (
@@ -22,6 +27,7 @@ const PhotoSlider = (props: any) => {
     <>
 	  <Splide aria-label="Photo Slider" options={options}>
           {photos}
+        
       </Splide>
     </>
   );

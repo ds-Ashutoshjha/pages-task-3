@@ -416,6 +416,7 @@ export default function OpenClose(props: any) {
           {/* {OpenStausFunctions.formatOpenNowString(props.hours, props.timezone)}{" "} */}
           {
             OpenStausFunctions.formatOpenNowString(props.hours, props.timezone)}
+            
          
         </div>
       ) : (
@@ -445,3 +446,4 @@ export default function OpenClose(props: any) {
 // function formatTime(end: any): string {
 //   throw new Error("Function not implemented.");
 // }
+
