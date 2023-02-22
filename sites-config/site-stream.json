@@ -19,7 +19,9 @@
     "c_locatorHeaderBanner",
     "c_bannerimages",
     "c_headerfooterservices",
-    "facebookPageUrl"
+    "facebookPageUrl",
+    "c_bannerdata1",
+    "photoGallery"
     
   ],
   "localization": {

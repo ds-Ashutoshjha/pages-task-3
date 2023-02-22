@@ -25,7 +25,7 @@ const PageLayout = ({
 }: Props) => {
 
 
-  console.log('global', c_bannerButton);
+  // console.log('global', c_bannerButton);
 
 
   return (

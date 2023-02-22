@@ -26,6 +26,7 @@ import {
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import Footer from "../components/layouts/footer";
 import Header from "../components/layouts/header";
+import PhotoSlider1 from "../components/locationDetail/Photoslider1";
 
 // export const config: TemplateConfig = {
 //   stream: {
@@ -181,6 +182,7 @@ const Locator: Template<TemplateRenderProps> = ({
     <>
       <div>
       <Header _site={_site} />
+    <PhotoSlider1 _site={_site}/>
         <JsonLd<locator>
           item={{
             "@context": "https://schema.org",

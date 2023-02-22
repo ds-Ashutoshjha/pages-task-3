@@ -1461,3 +1461,81 @@ nav[aria-label="Pagination"] button:disabled {
 }
 .active.daylist{ @apply  !block pl-[50px]}
 .OpenCloseStatus .daylist{@apply hidden}
+
+
+.photo_slider_content {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /* justify-content: center; */
+  text-align: center;
+  color: #fff;
+}
+
+.photo_slider_content h2 {
+  font-size: 50px;
+}
+
+.photo_slider_content a {
+  font-size: 24px;
+  /* margin: 23px 0; */
+  border: 1px solid;
+}
+.photo_slider_content h2 {
+  font-size: 50px;
+  margin-bottom: 25px;
+}
+.photo_slider_content a {
+  font-size: 20px;
+  padding: 6px 25px;
+  border: 1px solid;
+}
+
+.photo_slider_content a:hover {
+ background:black;
+}
+
+
+.photo_slider_content p {
+  margin: 21px 0;
+  font-size: 20px;
+}
+.about_sec {
+  display: flex;
+  gap: 20px;
+}
+
+.about_left {
+  width: 50%;
+}
+
+.about_right {
+  width: 50%;
+  align-items: center;
+  font-size: 19px;
+  line-height: 27px;
+  padding: 50px 0;
+}
+
+.about_right h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.about_right a {
+  font-size: 20px;
+  padding: 6px 25px;
+  border: 1px solid;
+}
+
+.about_right a:hover {
+  background:black;
+  color:#ffffff;
+ }
+
+.about_right h3 {
+  margin: 20px 0;
+}

@@ -93,6 +93,7 @@
         "dm_directoryParents.meta.entityType",
         "c_bannerButton",
         "c_bannerTagline",
+        "photoGallery",
       ],
       // Defines the scope of entities that qualify for this stream.
       filter: {
@@ -281,7 +282,7 @@
   export const transformProps: TransformProps<ExternalApiData> = async (
     data: any
   ) => {
-    const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=US&api_key=92fe7ef5c98bb142dad64ce862b09df6&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=4`;
+    const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=92fe7ef5c98bb142dad64ce862b09df6&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=10`;
     const externalApiData = (await fetch(url).then((res: any) =>
       res.json()
     )) as nearByLocation;
@@ -327,7 +328,6 @@
       c_abouts,
       // c_cta1,
       c_headerfooterservices,
-      photoGallery,
       c_banner_image,
       c_canonical,
       description,
@@ -340,6 +340,7 @@
       dm_directoryParents,
       c_bannerButton,
       c_bannerTagline,
+      photoGallery,
     } = document;
 
     let templateData = { document: document, __meta: __meta };
@@ -581,18 +582,23 @@
 
           
 
-                <div style={{ backgroundColor: "white" }}>
-                  <h2>{c_abouts.aboutHeading}</h2>
-                  <a href="#">{c_abouts.cTA.label}</a>
-                  <img src={c_abouts.image.url} />
-
-                  <h3 style={{ color: "red" }}>{c_abouts.discription}</h3>
+                <div className="about_sec" style={{ backgroundColor: "#8080801a" }}>
+                  <div className="about_left">
+                      <img src={c_abouts.image.url} />
+                  </div>
+                  <div className="about_right">
+                      <h2>{c_abouts.aboutHeading}</h2>
+                      <h3>{c_abouts.discription}</h3>
+                      <a href="#">{c_abouts.cTA.label}</a>
+                  </div>
                 </div>
 
                 <div>
                   {/* <input type="search" placeholder="ergrtgh" style={{color:"red", width:"500px"}}></input> */}
                   <Faq faqs={c_faqs} />
                 </div>
+              <PhotoGallery photu={photoGallery}/>
+              
                 <div className="">
                   {/* <h1>Services</h1>
                   <div className="flex gap-6 text-center">
