@@ -26,13 +26,9 @@ const PageLayout = ({
 
 
   // console.log('global', c_bannerButton);
-
-
   return (
     <>
       <Header headerLogo={global?.c_logo} label={_site?.c_cricket} url={""} images={""} />
-      
-      <PhotoSlider bannerImage={global.c_bannerimages} bannercta={bannercta} c_bannerTagline={c_bannerTagline} title={title} c_bannerButton={c_bannerButton} />
       {children}
       <Footer
           imagelogo={global?.c_footerLogo}

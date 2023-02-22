@@ -178,6 +178,9 @@ const Locator: Template<TemplateRenderProps> = ({
 
   }
   var Api = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
+
+
+
   return (
     <>
       <div>
@@ -200,7 +203,8 @@ const Locator: Template<TemplateRenderProps> = ({
           {" "}
           <AnalyticsScopeProvider name={""}>
             <PageLayout global={_site}>
-            
+              
+            <PhotoSlider1 bannerImage={_site.c_bannerimages} bannercta={_site?.c_bannerButton} c_bannerTagline={_site?.c_bannerTagline} title={_site?.name} c_bannerButton={_site?.c_bannerButton}  bannerCTA={_site?.c_locatorSliderButton} sliderHeading={_site?.c_locatorSliderHeading}/>
 
               <SearchHeadlessProvider
 

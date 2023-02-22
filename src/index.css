@@ -1539,3 +1539,11 @@ nav[aria-label="Pagination"] button:disabled {
 .about_right h3 {
   margin: 20px 0;
 }
+.photo_slider_c h2 {
+  width: 30%;
+  margin: 23px auto;
+  background: rgb(49, 14, 38);
+  text-shadow: 2px 3px grey;
+  padding: 17px;
+  box-shadow: 1px 2px 21px 2px white;
+}

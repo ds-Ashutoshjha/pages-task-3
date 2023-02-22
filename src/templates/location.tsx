@@ -515,6 +515,9 @@
 
           <AnalyticsScopeProvider name={""}>
             <PageLayout global={_site} title={name} c_bannerButton={c_bannerButton} c_bannerTagline={c_bannerTagline}>
+
+            <PhotoSlider bannerImage={_site.c_bannerimages} bannercta={c_bannerButton} c_bannerTagline={c_bannerTagline} title={name} c_bannerButton={c_bannerButton}  bannerCTA={_site?.c_locatorSliderButton} sliderHeading={_site?.c_locatorSliderHeading}/>
+
               {/* <BreadCrumbs name={name} address={address} parents={dm_directoryParents}/> */}
               <BreadCrumbs
                 name={name}

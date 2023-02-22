@@ -23,8 +23,11 @@ const PhotoSlider = (props: any) => {
      
      <div className="photo_slider_content">
       <h2>{c_bannerTagline}</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <a href={c_bannerButton?.link}>{c_bannerButton?.label}</a>  
+      {/* <h3>{c_bannerButton}</h3> */}
+      {c_bannerButton ? 
+       <a href={c_bannerButton?.link}>{c_bannerButton?.label}</a>  
+      :""}
+       
      </div>
    
     </div>

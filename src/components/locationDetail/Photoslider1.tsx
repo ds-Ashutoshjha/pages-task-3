@@ -3,20 +3,42 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
 const PhotoSlider1 = (props: any) => {
-  const { c_bannerdata1, } = props;  
+  const { bannerImage, height, width,bannerCTA,sliderHeading} = props;  
   const options = {
     type         : 'loop',
     autoplay     : true,
     pauseOnHover : false,
     resetProgress: false,
   };
- 
-  const photos = c_bannerdata1?.images?.map((element:any) => ( 
+
+
+  console.log("premsaini"); 
+  console.log(bannerCTA);
+  console.log(sliderHeading);
+
+  const photos = bannerImage?.map((element:any) => ( 
 	<SplideSlide>
     <div className="banner">
-    {/* <h2>{c_bannerTagline}</h2>
-      <a href={c_bannerButton?.link}>{c_bannerButton?.label}</a>   */}
-    <img src={element?.url} />
+<div className="banner_image_img">
+
+<img height={height} width={width} src={element?.image?.url} />
+
+</div>
+     
+     <div className="photo_slider_content photo_slider_c">
+     { sliderHeading ? 
+            <h2>{sliderHeading}</h2>
+        
+        :""}
+      {/* <h3>{c_bannerButton}</h3> */}
+      {bannerCTA ? 
+       <a href={bannerCTA?.link}>{bannerCTA?.label}</a>  
+      :""}
+
+       
+
+       
+     </div>
    
     </div>
 	</SplideSlide>    

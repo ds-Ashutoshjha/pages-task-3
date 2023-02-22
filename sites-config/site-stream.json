@@ -21,7 +21,9 @@
     "c_headerfooterservices",
     "facebookPageUrl",
     "c_bannerdata1",
-    "photoGallery"
+    "photoGallery",
+    "c_locatorSliderHeading",
+    "c_locatorSliderButton"
     
   ],
   "localization": {
