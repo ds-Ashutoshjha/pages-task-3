@@ -315,6 +315,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
 
           <ResultsCount
             customCssClasses={{ container: "mx-2 my-0 text-dark-gray" }}
+            
           />
 </div>
         </div>
