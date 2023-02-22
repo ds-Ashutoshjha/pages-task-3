@@ -101,7 +101,6 @@ function sortByDay(week: Week): Week {
       return new Date(
         now.toLocaleString("en-US", { timeZone: "Europe/London" })
       ).getDay();
-
     },
     [now],
   )
