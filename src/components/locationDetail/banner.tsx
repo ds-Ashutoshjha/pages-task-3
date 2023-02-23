@@ -42,7 +42,7 @@
 
 import * as React from "react";
 import OpenClose from "../commons/openClose";
-import Defaultimage from "../../images/faq-bg-.jpg";
+// import Defaultimage from "../../images/faq-bg-.jpg";
 
 export type Address = {
   line1: string;
