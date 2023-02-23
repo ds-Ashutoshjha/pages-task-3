@@ -80,10 +80,10 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
       );
     }
     params1 = {
-      latitude: 54.9191,
-      //latitude:centerLatitude,
-      //longitude:centerLongitude,
-      longitude: -1.3692,
+      // latitude: 54.9191,
+      latitude:centerLatitude,
+      longitude:centerLongitude,
+      // longitude: -1.3692,
     };
     SetNewparam(params1);
     // mapzoom=8;
@@ -183,7 +183,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
           
   }
 
-  let bannerimage = props._site.c_locatorBannerImage != undefined  ? props._site.c_locatorBannerImage.image.url:'';
+  // let bannerimage = props._site.c_locatorBannerImage != undefined  ? props._site.c_locatorBannerImage.image.url:'';
  
 
   // const loader =

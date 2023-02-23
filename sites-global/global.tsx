@@ -22,8 +22,10 @@ export const conversionDetailsPhone = {
   cid: "",
   cv: "2",
 };
-export const center_latitude = 51.5095146286;
-export const center_longitude = -0.1244828354;
+// export const center_latitude = 51.5095146286;
+// export const center_longitude = -0.1244828354;
+export const center_latitude = 26.9124;
+export const center_longitude = 75.7873;
 
 /* All Svgs */
 export const Cross = `<svg xmlns="http://www.w3.org/2000/svg" width="20.953" height="20.953" viewBox="0 0 20.953 20.953"><path id="Icon_ionic-md-close" data-name="Icon ionic-md-close" d="M28.477,9.619l-2.1-2.1L18,15.9,9.619,7.523l-2.1,2.1L15.9,18,7.523,26.381l2.1,2.1L18,20.1l8.381,8.381,2.1-2.1L20.1,18Z" transform="translate(-7.523 -7.523)" fill="#B1B1B1"></path></svg>`;
@@ -125,4 +127,4 @@ export const humburgerIcon = `<svg class="humburger-i" viewBox="0 0 24 24" versi
 	</g>
 </svg>`;
 
-export const search_icn = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 30.938 30.579"><g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(-3 -3)"><path id="Path_39" data-name="Path 39" d="M24.691,14.6A10.1,10.1,0,1,1,14.6,4.5,10.1,10.1,0,0,1,24.691,14.6Z" transform="translate(0 0)" fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path id="Path_40" data-name="Path 40" d="M35.066,34.707,24.975,24.975" transform="translate(-3.249 -3.249)" fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></g></svg>`;
+export const search_icn = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 30.938 30.579"><g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(-3 -3)"><path id="Path_39" data-name="Path 39" d="M24.691,14.6A10.1,10.1,0,1,1,14.6,4.5,10.1,10.1,0,0,1,24.691,14.6Z" transform="translate(0 0)" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path id="Path_40" data-name="Path 40" d="M35.066,34.707,24.975,24.975" transform="translate(-3.249 -3.249)" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></g></svg>`;

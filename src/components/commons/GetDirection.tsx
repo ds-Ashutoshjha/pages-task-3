@@ -68,7 +68,7 @@ const GetDirection = (props: GetDirection) => {
   return (
     <>
       <a
-        onClick={getDirectionUrl}
+        // onClick={getDirectionUrl}
         className="btn notHighlight"
         rel="noopener noreferrer"
       >
