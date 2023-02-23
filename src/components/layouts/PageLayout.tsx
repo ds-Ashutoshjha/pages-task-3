@@ -1,26 +1,19 @@
 import * as React from "react";
+import Banner from "../locationDetail/banner";
 import PhotoSlider from "../locationDetail/PhotoSlider";
 import Footer from "./footer";
 import Header from "./header";
-import Nav from "./Nav";
 
 type Props = {
   title?: string;
   _site?: any;
   global: any;
-  bannercta: any;
-  c_bannerButton: any;
-  c_bannerTagline: any;
   children?: React.ReactNode;
 };
 
 const PageLayout = ({
-  title,
   _site,
   global,
-  c_bannerButton,
-  c_bannerTagline,
-  bannercta, 
   children,
 }: Props) => {
 
@@ -28,7 +21,8 @@ const PageLayout = ({
   // console.log('global', c_bannerButton);
   return (
     <>
-      <Header headerLogo={global?.c_logo} label={_site?.c_cricket} url={""} images={""} />
+      <Header headerLogo={global?.c_logo} label={global.c_cricket}  />
+      <Banner c_bannerTagline={global.c_locatorSliderHeading} bannerImage={global.c_bannerimages} c_bannerButton={global.c_locatorSliderButton}/>
       {children}
       <Footer
           imagelogo={global?.c_footerLogo}

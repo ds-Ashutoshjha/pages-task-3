@@ -184,7 +184,7 @@ const Locator: Template<TemplateRenderProps> = ({
   return (
     <>
       <div>
-      <Header _site={_site} />
+
     <PhotoSlider1 _site={_site}/>
         <JsonLd<locator>
           item={{

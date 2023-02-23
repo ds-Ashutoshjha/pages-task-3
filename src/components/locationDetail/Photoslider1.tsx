@@ -12,9 +12,9 @@ const PhotoSlider1 = (props: any) => {
   };
 
 
-  console.log("premsaini"); 
-  console.log(bannerCTA);
-  console.log(sliderHeading);
+  // console.log("premsaini"); 
+  // console.log(bannerCTA);
+  // console.log(sliderHeading);
 
   const photos = bannerImage?.map((element:any) => ( 
 	<SplideSlide>
@@ -46,9 +46,9 @@ const PhotoSlider1 = (props: any) => {
   return (
 
     <>
-	      <Splide aria-label="Photo Slider" options={options}>
+	      {/* <Splide aria-label="Photo Slider" options={options}>
            {photos}
-      </Splide>
+      </Splide> */}
     </>
   );
 };

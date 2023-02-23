@@ -42,7 +42,7 @@
 
 import * as React from "react";
 import OpenClose from "../commons/openClose";
-import Defaultimage from "../../images/faq-bg-.jpg"
+import Defaultimage from "../../images/faq-bg-.jpg";
 
 export type Address = {
   line1: string;
@@ -56,10 +56,9 @@ type Banner = {
   name?: string;
   address?: Address;
   hours?: any;
-  timezone: any;
-  clickcollect?: object;
-  c_bannerImage?: string;
-  c_locatorBannerAdditionalText?:string;
+  c_bannerTagline: any;
+  bannerImage: any;
+  c_bannerButton: any;
   children?: React.ReactNode;
 };
 
@@ -76,32 +75,43 @@ const renderPrettyAddress = (address?: Address) => {
 };
 
 const Banner = (props: Banner) => {
-  const { name, address, clickcollect, c_bannerImage,c_locatorBannerAdditionalText, children } = props;
-  
-  console.log(c_bannerImage,"hbdhfjkjfkjgjg")
-
+  const { name, address, c_bannerTagline, bannerImage, c_bannerButton, children } =
+    props;
+console.log('c_bannerTagline', bannerImage)
   return (
     <>
       <div className="hero-section">
-        <img className="hero-image"
-          src={c_bannerImage?c_bannerImage:Defaultimage} alt="banner" width="1" height="1" />
-        <div className="hero-content">
+        {bannerImage?.map((item: any) => {
+          console.log('bannerHeadinerwgtgg', bannerImage)
+          return (
+            <>
+
+              <img
+                className="hero-image"
+                src={item.image.url}
+                alt="banner"
+                width="1"
+                height="1"
+              />
+            </>
+          );
+        })}
+ 
+ <div className="hero-content">
           <div className="container">
-            <div className={`banner-text  ${props.hours && props.timezone ? 'banner-dark-bg': ''}`}>
-              <h1>{name}</h1>
-              {c_locatorBannerAdditionalText?
-              <p>{c_locatorBannerAdditionalText}</p>
-              :''}
-              {props.hours && props.timezone ?
-                <div className="openClosestatus">
-                  <OpenClose timezone={props.timezone} hours={props.hours} deliveryHours={props.hours}></OpenClose>
-                </div> : ''}
-            </div>
-          </div>
-        </div>
-        </div>
-      </>
-      );
+ <div className="photo_slider_content">
+      <h2>{c_bannerTagline}</h2>
+      {/* <h3>{c_bannerButton}</h3> */}
+      {c_bannerButton ? 
+       <a href={c_bannerButton?.link}>{c_bannerButton?.label}</a>  
+      :""}
+       
+     </div>
+     </div>
+     </div>  
+     </div>
+    </>
+  );
 };
 
-      export default Banner;
+export default Banner;

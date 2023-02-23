@@ -389,7 +389,7 @@ const State: Template<TemplateRenderProps> = ({
         // enableTrackingCookie={AnalyticsEnableTrackingCookie}
       >
         <AnalyticsScopeProvider name={""}>
-        <Header _site={_site} />
+        {/* <Header _site={_site} /> */}
         <PageLayout global={_site}>
         <BreadCrumbs
           name={name}

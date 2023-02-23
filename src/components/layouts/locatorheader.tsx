@@ -42,7 +42,7 @@ type props ={
   return (
     
 <>
-             <div style={{backgroundColor:"skyblue",height:"50px", padding:"5px",textAlign:"center",}}>
+             <div style={{height:"50px", padding:"5px",textAlign:"center",}}>
             <div style={{marginLeft:"300px",fontSize:"Oswald"}} className="flex gap-x-10 text-lg font-semibold">
                 {/* {LocatorBannerImg} */}
                 

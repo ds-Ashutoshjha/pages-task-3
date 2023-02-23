@@ -152,9 +152,9 @@ export default function Faq(props: any) {
           ariaExpanded={ariaExpanded}
           background={background}
           item={item}
-          index={index}
+          index={index+1}
           onClick={() => {
-            setActiveIndex(index);
+            setActiveIndex(index+1);
           }}
         />
       );

@@ -43,7 +43,7 @@ a {
 
 body {
   @apply font-main-font text-sm md:text-base text-gray;
-  background: rgb(243, 243, 239);
+  background: #fff
 }
 
 h1 {
@@ -337,7 +337,7 @@ body.mapView .mobile-btns .btn.mapBtn {
 
 .location .button-bx {
   @apply max-w-lg justify-start xl:mx-auto pl-2 flex-row lg:pl-7;
-  background-color: #f4ea2d;
+  background-color: #fff;
 }
 .result-list .location {
   @apply first:mt-0;
@@ -776,7 +776,7 @@ nav[aria-label="Pagination"] button:disabled {
 }
 .address-with-availablity {
   @apply flex  items-start flex-col;
-  background-color: rgb(235, 245, 245);
+  background-color:#fff
 }
 .address-with-availablity .address {
   @apply pr-5;
@@ -985,7 +985,7 @@ nav[aria-label="Pagination"] button:disabled {
 
 /* faq */
 .faq-main-sec {
-  @apply m-0 relative pb-7 pt-0 md:pb-12; background-color: rgb(232, 246, 246);
+  @apply m-0 relative pb-7 pt-0 md:pb-12; background-color:#fff
 }
 .faq-sec {
   @apply m-0;
