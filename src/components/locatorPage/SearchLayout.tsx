@@ -228,7 +228,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
 
       {/* {loader} */}
       <div className="breadcrumb">
-        <div className="container-custom">
+        <div className="container-lg mt-11">
           <ul>
             <li>
               <a href="#" className="home"> Home</a>
@@ -238,7 +238,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
 
         </div>
       </div>
-      <div className="locator-main">
+      <div className="container-lg">
         {allowlocation.length > 0 ?
           <div className="for-allow">{allowlocation}</div>
           : ''}

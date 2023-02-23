@@ -11,8 +11,9 @@ const Header = (props: data) => {
 
   return (
     <>
-    <div className=" bg-black">
-      <div><img
+    <div className=" bg-white">
+      <div className="container-lg header_sec">
+      <div className="logo_area"><img
         src={headerLogo?.url}
         style={{
           width: "100px",
@@ -22,17 +23,18 @@ const Header = (props: data) => {
             }}
       />
 </div>
-            <div style={{ marginLeft: "60%" }} className="flex gap-x-4 items-center">
+            <div className="flex gap-x-4 items-center menus_custom">
         {label?.map((links: any) => {
           return (
             <div
-              className="flex gap-3 text-sm font-semibold text-body"
-              style={{ color: "white", fontSize: "15px", marginBottom:"40px"}}
+              className="flex gap-3 text-sm font-semibold text-body "
+              style={{ color: "black", fontSize: "20px",textTransform:"uppercase"}}
             >
               <a href="#"> {links.label}</a>
             </div>
           );
         })}
+      </div>
       </div>
       </div>
     </>

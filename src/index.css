@@ -1547,3 +1547,34 @@ nav[aria-label="Pagination"] button:disabled {
   padding: 17px;
   box-shadow: 1px 2px 21px 2px white;
 }
+
+.container-lg.header_sec {
+  display: flex;
+  height: 113px;
+  align-items: center;
+}
+
+.menus_custom {
+  width: 50%;
+  justify-content: right;
+  gap: 30px;
+}
+
+.logo_area {
+  width: 50%;
+}
+
+.footer-1 p {
+  font-size: 16px;
+  margin-bottom: 17px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer.inline-block.w-full.footer-1.text-white.py-8.sm\:py-12 {
+  margin-top: 70px;
+}
+a.btn.notHighlight svg {
+  fill: #fff;
+}
